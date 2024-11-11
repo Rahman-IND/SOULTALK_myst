@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" contant="width=device-width, initial-scale=1.0">
+        <title> SOULTALK myst </title>
+        <link rel="stylesheet" href="style.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    </head>
+    <body>
+        <div class="landingpage">
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="cbb0e07e-c8e8-4ad7-a3cd-eb6964e20687">
+                <input type="hidden" name="subject" value="New Booking!!!">
+                <h1>SOULTALK myst</h1>
+
+                <div class="tagline">
+                    <p>The universe has answers waiting for you</p>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" id="Name" name="Name" placeholder="Full Name" required>
+                    <i class='bx bxs-user'></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="text" id="phone" name="Phone Number" placeholder="Phone Number" required maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g, '')">
+                    <i class='bx bxs-phone'></i>
+                </div>
+
+                <div class="input-box">
+                    <input type="email" id="email" name="Email" placeholder="Email" required>
+                    <i class='bx bxs-envelope'></i>
+                    <span id="error-message" style="color: red; display: none;"><i class='bx bx-error'></i>Please enter a valid email address.</span>
+                </div>
+
+                <!--Script of validating email-->
+                <script>
+                    document.getElementById('email').addEventListener('input', function(event){
+                        const emailInput = event.target;
+                        const errorMessage = document.getElementById('error-message');
+
+                        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                        if (!emailRegex.test(emailInput.value)) {
+                            errorMessage.style.display = 'inline';
+                        } else {
+                            errorMessage.style.display = 'none';
+                        }
+                    });
+                </script>
+
+                <div class="date-time">
+                    <input type="datetime-local" id="booking-datetime" name="Booking-Date&time" required>
+                </div>
+
+                <!--Script of validating Time-->
+                <script>
+                    function setMinDateTime() {
+                        const now = new Date();
+                        const year = now.getFullYear();
+                        const month = String(now.getMonth() + 1).padStart(2, '0');
+                        const day = String(now.getDate()).padStart(2, '0');
+                        const hours = String(now.getHours()).padStart(2, '0');
+                        const minutes = String(now.getMinutes()).padStart(2, '0');
+
+                        const formattedDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
+
+                        document.getElementById('booking-datetime').setAttribute('min', formattedDateTime);
+                    }
+                    window.onload = setMinDateTime;
+                </script>
+
+                <div class="mode-session">
+                    <label for="session">Mode of Session:</label>
+                    <select id="Mode" name="Mode">
+                        <option selected class="selected">Choose Mode</option>
+                        <option>Online</option>
+                        <option>Offline</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn"> Book Now</button>
+
+                <div class="more-info">
+                    <p><i class='bx bxs-info-square'></i> For Rescheduling Or Cancellation <br>
+                    Reach us out at our <a href="#">WhatsApp</a></p>
+                </div>
+                <!-- Redirect to another website -->
+                <input type="hidden" name="redirect" value="https://www.google.com">
+            </form>
+        </div>
+    </body>
+</html>
