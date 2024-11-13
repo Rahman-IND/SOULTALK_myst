@@ -11,7 +11,7 @@
     </head>
     <body>
         <div class="landingpage">
-            <form action="https://api.web3forms.com/submit" method="POST">
+            <form action="https://api.web3forms.com/submit" method="POST" id="form">
                 <input type="hidden" name="access_key" value="cbb0e07e-c8e8-4ad7-a3cd-eb6964e20687">
                 <input type="hidden" name="subject" value="New Booking!!!">
                 <h1>SOULTALK myst</h1>
@@ -83,12 +83,19 @@
 
                 <button type="submit" class="btn"> Book Now</button>
 
+                <script>
+                    window.onload = function() {
+                        // Reset the form fields when the page loads
+                        document.getElementById("form").reset();
+                    };
+                </script>
+
                 <div class="more-info">
                     <p><i class='bx bxs-info-square'></i> For Rescheduling Or Cancellation <br>
                     Reach us out at our <a href="#">WhatsApp</a></p>
                 </div>
                 <!-- Redirect to another website -->
-                <input type="hidden" name="redirect" value="https://www.google.com">
+                <!--input type="hidden" name="redirect" value="https://www.google.com"-->
             </form>
         </div>
     </body>
