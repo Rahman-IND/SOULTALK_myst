@@ -66,14 +66,15 @@ body {
     outline: none;
     border: 2px solid rgba(225, 225, 225, .2);
     border-radius: 40px;
-    font-size: 16px;
+    font-size: 16px;        /*input field font size*/
     color: #fff;
     padding: 20px 45px 20px 20px;
 }
 
-/*changes in color of input-field placeholder*/
+/*changes in input placeholder*/
 .input-box input::placeholder{
-    color: #fff;
+    color: #ffffffb4;
+    font-size: 14px;        /*placeholder text*/
 }
 
 /*changes in input field icons*/
@@ -89,77 +90,47 @@ body {
 /*changes in error-message of Email field*/
 .input-box span {
     padding: 20px 45px 20px 20px;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .input-box span i {
     color: red;
 }
 
-/*changes in date and time field size*/
-.landingpage .date-time {
-    position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
-    color: #fff;
-}
-
-/*changes in date and time field's input-field*/
-.landingpage .date-time input {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 2px solid rgba(225, 225, 225, .2);
-    border-radius: 40px;
+/*changes in input field of Date and time*/
+#booking-datetime {
+    text-align: center;
     font-size: 16px;
-    color: #fff;
-    padding: 20px 45px 20px 20px;
+    padding: 10px;
+    width: 100%;
 }
 
-/*changes in date and time field's color*/
-.landingpage .date-time input::placeholder {
-    color: #fff;
-}
-
-/*changes in date-time field's icon*/
-.landingpage .date-time input::-webkit-calendar-picker-indicator {
-    filter: invert(1) sepia(1) saturate(5) hue-rotate(190deg) !important;
-    transform: scale(1.3) translateX(13px);
-    cursor: pointer;
-}
-
-/*changes in date-time field's error-message*/
-.landingpage .date-time span {
-    padding: 20px 45px 20px 20px;
-    font-size: 13px;
-}
-
-.landingpage .mode-session {
+/*.landingpage .mode-session {
     position: relative;
     width: 100%;
     height: 100%;
     margin: 30px 0;
-    color: #fff;
-}
+    color: red#fff;
+}*/
 
+/*changes in mode field*/
 .landingpage .mode-session {
     background: transparent;
     border: none;
     outline: none;
     border: 2px solid rgba(225, 225, 225, .2);
     border-radius: 40px;
-    font-size: 16px;
+    font-size: 16px;        /*for mode of session*/
     padding: 10px 10px 10px 20px;
 }
 
+/*changes in Mode field's Select section*/
 .landingpage .mode-session select {
     position: relative;
     appearance: none;
     width: 134px;
-    height: 24px;
+    height: 22px;
     padding: 0px 0px 2px 5px;
     font-weight: 600;
     background-color: rgba(255, 255, 255, 0.385);
@@ -203,13 +174,13 @@ body {
 
 /*Changes in Rescheduling Or Cancellation */
 .landingpage .more-info {
-    font-size: 14.5px;
+    font-size: 14px;
     text-align: center;
     margin: 20px 0 15px;
 }
 
 .more-info p a {
-    color: white;
+    color: lightblue;
     text-decoration: none;
     font-weight: 700;
 
@@ -219,96 +190,120 @@ body {
     color: yellowgreen;
 }
 
+/*--------------------------------Media Query--------------------------------------------*/
+
 @media (max-width: 800px) {
     /* Adjust landing page form width */
     .landingpage {
-        width: 90vw; /* Use more space on smaller screens */
+        width: 75vw; /* Use more space on smaller screens */
         padding: 20px;
     }
 
     /* Adjust heading font size for smaller screens */
     .landingpage h1 {
-        font-size: 28px;
+        font-size: 34px;
+    }
+    
+    
+    /* Adjust padding and margins for better spacing on smaller screens */
+    .landingpage .tagline p {
+        font-size: 17px;
+        font-weight: 400;
+        margin-bottom: 15px;
     }
 
-    /* Reduce input box and button sizes */
-    .input-box input, 
-    .landingpage .btn {
-        font-size: 14px;
+    .input-box input {
+        font-size: 18px;
         padding: 15px 35px 15px 15px;
     }
 
-    /* Adjust select dropdown styles */
-    .landingpage .mode-session select {
-        font-size: 14px;
-        padding: 5px 8px;
-        height: 35px;
+    .input-box input::placeholder{
+        color: #ffffffb4;
+        font-size: 16px;        /*placeholder text*/
+        font-weight: 500;
     }
 
     /* Adjust icon size in inputs */
     .input-box i {
+        font-size: 22px;
+    }
+
+    #booking-datetime {
         font-size: 18px;
     }
 
-    /* Adjust padding and margins for better spacing on smaller screens */
-    .landingpage .tagline p {
-        font-size: 14px;
-        margin-bottom: 15px;
+    .landingpage .mode-session {
+        font-size: 18px;
+    }
+
+    /* Adjust select dropdown styles */
+    .landingpage .mode-session select {
+        font-size: 18px;
+        width: 155px;
+        height: 26px;
+        font-weight: 600;
+        background-position: 133px;
     }
 
     /* Adjust the button font size and padding */
     .landingpage .btn {
-        font-size: 14px;
-        height: 40px;
+        font-size: 22px;
+        margin: 30px 0 0;
     }
 
     /* Modify margin and padding for better mobile UX */
     .landingpage .more-info {
-        font-size: 12px;
-        margin-top: 15px;
+        font-size: 18px;
+    }
+
+    .landingpage .more-info p a {
+        color: #25D366;
     }
 
     /* Additional tweaks for small screen design */
-    .input-box, 
+    /*.input-box, 
     .landingpage .mode-session, 
     .landingpage .date-time {
         margin: 15px 0;
-    }
+    }*/
 }
 
-/* Media Query for Very Small Screens (max-width: 500px) */
+/* Media Query for Mobile Screens (max-width: 500px) */
 @media (max-width: 500px) {
     .landingpage {
-        width: 95vw; /* Make form wider on very small screens */
+        width: 90vw; /* Make form wider on very small screens */
         padding: 15px;
     }
 
     .landingpage h1 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
-    .input-box input, 
-    .landingpage .btn {
-        font-size: 13px;
-        padding: 12px 30px 12px 12px;
+    .landingpage .input-box input {
+        font-size: 18px;
     }
 
     .landingpage .mode-session select {
-        font-size: 13px;
-        height: 30px;
-        padding: 5px 10px;
+        font-size: 18px;
     }
 
-    .input-box i {
-        font-size: 16px;
+    .landingpage .input-box i {
+        font-size: 18px;
+    }
+
+    .landingpage .btn {
+        font-size: 22px;
+        margin-top: 20px;
     }
 
     .landingpage .more-info {
-        font-size: 11px;
+        font-size: 14px;
+        margin-bottom: 1px;
     }
 }
 
-@media (max-width:320px) {      /*Media Query for Mobile S - 320px*/
+/* Media Query for small Screens (max-width: 400px) */
+@media (max-width:400px) {
     .landingpage {
         width: 95vw;
         padding: 5px;
@@ -319,34 +314,27 @@ body {
     }
 
     .landingpage .tagline p {
-        font-size: 12px;
-    }
-
-    .landingpage .input-box span {
-        font-size: 12px;
-    }
-
-    .landingpage .date-time input {
-        font-size: 14px;
-    }
-
-    .landingpage .mode-session label {
-        font-size: 14px;
-    }
-
-    .landingpage .mode-session {
-        margin-top: 28px;
-    }
-
-    .landingpage .btn {
-        margin: 15px 0;
-    }
-
-    .landingpage .more-info p {
         font-size: 13px;
     }
 
-    .more-info p a {
-        color: greenyellow;
+    .landingpage .input-box {
+        font-size: 13px;
+    }
+
+    .landingpage .input-box span {
+        font-size: 13px;
+    }
+
+    .landingpage .btn {
+        margin-top: 25px 0;
+    }
+
+    .landingpage .more-info p {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+
+    .landingpage .more-info p a {
+        color: #25D366;
     }
 }
