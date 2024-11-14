@@ -104,62 +104,89 @@
 
                 <button type="submit" class="btn">Book Now</button>
 
-                <script>
-                    document.getElementById('form').addEventListener('submit', function(event) {
-                        // Get form values
-                        const name = document.getElementById('Name').value.trim();
-                        const phone = document.getElementById('phone').value.trim();
-                        const email = document.getElementById('email').value.trim();
-                        const bookingDate = document.getElementById('booking-datetime').value.trim();
-                        const mode = document.getElementById('Mode').value;
-
-                        let isValid = true;
-
-                        // Check if name is empty
-                        if (name === "" || name.length < 3) {
-                            alert("Please enter your full name");
-                            isValid = false;
-                        }
-
-                        // Check if phone number is valid (10 digits)
-                        if (phone.length !== 10) {
-                            alert("Please enter a valid 10-digit phone number.");
-                            isValid = false;
-                        }
-
-                        // Check if email is valid
-                        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                        if (!emailRegex.test(email)) {
-                            alert("Please enter a valid email address.");
-                            isValid = false;
-                        }
-
-                        // Check if booking date and time is selected
-                        if (bookingDate === "") {
-                            alert("Please select a date and time.");
-                            isValid = false;
-                        }
-
-                        // Check if mode is selected
-                        if (mode === "Choose Mode") {
-                            alert("Please select a mode for the session.");
-                            isValid = false;
-                        }
-
-                        // If any validation fails, prevent form submission
-                        if (!isValid) {
-                            event.preventDefault();
-                        }
-                    });
-                </script>
-
                 <div class="more-info">
                     <p><i class='bx bxs-info-square'></i> For Rescheduling Or Cancellation <br>
-                    Reach us out at our <a href="https://wa.me/917099045855">WhatsApp</a></p>
+                    Reach us out at our <a href="https://wa.me/917099045855" target="_blank" >WhatsApp</a></p>
                 </div>
-                <!-- Redirect to another website -->
                 <input type="hidden" name="redirect" value="https://rahman-ind.github.io/SOULTALK_myst/">
             </form>
+        </div>
+
+        <div class="popup" id="popup">
+            <img src="assets/tick1.gif">
+            <h2>Thank You!</h2>
+            <p>We’ve received your details and will confirm your appointment shortly.</p>
+            <button type="button" onclick="closePopup()">OK</button>
+        </div>
+
+        <script>
+            let popup = document.getElementById("popup");
+            let form = document.getElementById("form");
+
+            function openPopup(){
+                popup.classList.add("open-popup");
+            }
+
+            function closePopup(){
+                popup.classList.remove("open-popup");
+                form.submit();
+                form.reset();
+            }
+
+            form.addEventListener('submit', function(event) {
+                // Get form values
+                const name = document.getElementById('Name').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const bookingDate = document.getElementById('booking-datetime').value.trim();
+                const mode = document.getElementById('Mode').value;
+
+                let isValid = true;
+
+                // Check if name is empty
+                if (name === "" || name.length < 3) {
+                    alert("Please enter your full name");
+                    isValid = false;
+                }
+
+                // Check if phone number is valid (10 digits)
+                if (phone.length !== 10) {
+                    alert("Please enter a valid 10-digit phone number.");
+                    isValid = false;
+                }
+
+                // Check if email is valid
+                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                if (!emailRegex.test(email)) {
+                    alert("Please enter a valid email address.");
+                    isValid = false;
+                }
+
+                // Check if booking date and time is selected
+                if (bookingDate === "") {
+                    alert("Please select a date and time.");
+                    isValid = false;
+                }
+
+                // Check if mode is selected
+                if (mode === "Choose Mode") {
+                    alert("Please select a mode for the session.");
+                    isValid = false;
+                }
+
+                // If any validation fails, prevent form submission
+                if (!isValid) {
+                    event.preventDefault();
+                } else {
+                    // If validation passes, trigger the popup
+                    event.preventDefault(); // Prevent form submission to show the popup first
+                    openPopup();
+                }
+            });
+        </script>
+
+                <!-- Redirect to another website -->
+            
         <!--    <script>
                 window.onload = function() {
                     // Reset the form fields when the page loads
@@ -168,6 +195,8 @@
                     document.getElementById('error-message').style.display = 'none';
                 };
             </script>   -->
-        </div>
+        
+        
+        
     </body>
 </html>
