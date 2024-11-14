@@ -164,6 +164,8 @@
                 window.onload = function() {
                     // Reset the form fields when the page loads
                     document.getElementById("form").reset();
+                    // Make sure the error message (for email) is hidden on load
+                    document.getElementById('error-message').style.display = 'none';
                 };
             </script>
         </div>
