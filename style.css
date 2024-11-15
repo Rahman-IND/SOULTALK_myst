@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
+    /*outline: 1px solid limegreen !important;        /*for css debugging*/
 }
 
 /*body alignment to center*/
@@ -89,9 +90,9 @@ body {
 
 /*changes in error-message of Email field*/
 .input-box span {
-    padding: 20px 45px 20px 20px;
+    padding: 2px 2px 6px 20px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .input-box span i {
@@ -224,7 +225,7 @@ body {
 
 .popup img {
     width: 100px;
-    margin-top: -14%;
+    margin-top: -16%;
     border-radius: 100%;
 }
 .popup h2 {
@@ -362,7 +363,7 @@ body {
 }
 
 /* Media Query for small Screens (max-width: 400px) */
-@media (max-width:400px) {
+/*@media (max-width:400px) {
     .landingpage {
         width: 95vw;
         padding: 5px;
@@ -395,5 +396,101 @@ body {
 
     .landingpage .more-info p a {
         color: #25D366;
+    }
+}*/
+
+@media (max-width: 400px) {
+    /* Adjust styles for devices with a maximum width of 400px */
+
+    /* Adjust landing page container width and padding */
+    .landingpage {
+        width: 95vw;        /* Utilize 95% of the viewport width for better responsiveness */
+        padding: 10px;      /* Add padding for spacing within the container */
+    }
+
+    /* Adjust heading (h1) font size for smaller screens */
+    .landingpage h1 {
+        font-size: 30px;    /* Reduce font size for better readability on small screens */
+    }
+
+    /* Adjust tagline paragraph font size for smaller screens */
+    .landingpage .tagline p {
+        font-size: 13px;    /* Decrease font size for compact layout */
+    }
+
+    /* Input box adjustments */
+    .landingpage .input-box {
+        width: 100%;        /* Make input boxes full width */
+        height: 50px;       /* Maintain a consistent height */
+        margin: 25px 0;     /* Add vertical spacing between input boxes */
+    }
+
+    /* Adjust input field font size */
+    .landingpage .input-box input {
+        width: 100%;        /* Ensure input fields stretch across the container */
+        font-size: 16px;    /* Standardize input text size */
+    }
+
+    /* Adjust placeholder text size */
+    .landingpage .input-box input::placeholder {
+        font-size: 13px;    /* Reduce placeholder text size for consistency */
+    }
+
+    /* Adjust label or supporting text within input boxes */
+    .landingpage .input-box span {
+        font-size: 13px;    /* Ensure smaller text for labels */
+        font-weight: 600;   /* Make text slightly bold for visibility */
+    }
+
+    /* Adjust icon size within input boxes */
+    .landingpage .input-box i {
+        font-size: 20px;    /* Maintain appropriate icon size for small screens */
+    }
+
+    /* Adjust font size for booking date and time input */
+    #booking-datetime {
+        font-size: 16px;    /* Ensure text is legible */
+    }
+
+    /* Adjust dropdown menu styles */
+    .landingpage .mode-session {
+        font-size: 16px;    /* Set font size for dropdown labels */
+        height: 50px;       /* Maintain consistent height for dropdowns */
+        margin: 25px 0 0 0; /* Add spacing at the top */
+    }
+    
+    /* Style the dropdown select box */
+    .landingpage .mode-session select {
+        height: 23px;       /* Adjust height for better fit */
+        font-size: 16px;    /* Set font size for dropdown options */
+        font-weight: 600;   /* Add boldness for improved readability */
+    }
+
+    /* Adjust button font size and spacing */
+    .landingpage .btn {
+        font-size: 16px;    /* Set button text size for consistency */
+        margin: 30px 0 25px 0; /* Add vertical spacing around buttons */
+    }
+
+    /* Adjust additional information section styles */
+    .landingpage .more-info {
+        font-size: 16px;    /* Ensure text is legible */
+        text-align: center; /* Center-align the content */
+        margin: 2px 0 0 0;  /* Add small vertical spacing */
+    }
+
+    /* Adjust font size of paragraphs inside the more-info section */
+    .landingpage .more-info p {
+        font-size: 13px;    /* Reduce font size for compact layout */
+    }
+
+    /* Style links within the more-info section */
+    .landingpage .more-info p a {
+        color: #25D366;     /* Use green color for links (e.g., WhatsApp theme) */
+    }
+
+    /* Adjust popup container width for smaller screens */
+    .popup {
+        width: 98vw;        /* Make popup nearly fullscreen for better usability */
     }
 }
