@@ -1,202 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> SOULTALK myst </title>
-        <link rel="stylesheet" href="style.css">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-        <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_red.css">
 
-    </head>
-    <body>
-        <div class="landingpage">
-            <form action="https://api.web3forms.com/submit" method="POST" id="form">
-                <input type="hidden" name="access_key" value="a3416b54-87f0-461c-b524-2ce325ceec7f">
-                <input type="hidden" name="subject" value="New Booking!!!">
-                <h1>SOULTALK myst</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOULTALK myst</title>
 
-                <div class="tagline">
-                    <p>The universe has answers waiting for you</p>
-                </div>
+    <!-- Link to external stylesheet -->
+    <link rel="stylesheet" href="style.css">
 
-                <div class="input-box">
-                    <input type="text" id="Name" name="Name" placeholder="Full Name" required>
-                    <i class='bx bxs-user'></i>
-                </div>
+    <!-- Link to Boxicons library for icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-                <div class="input-box">
-                    <input type="text" id="phone" name="Phone Number" placeholder="Phone Number" required maxlength="10" oninput="this.value=this.value.replace(/[^0-9]/g, '')">
-                    <i class='bx bxs-phone'></i>
-                </div>
+    <!-- Link to Flatpickr styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
-                <div class="input-box">
-                    <input type="email" id="email" name="Email" placeholder="Email" required>
-                    <i class='bx bxs-envelope'></i>
-                    <span id="error-message" style="color: red; display: none;"><i class='bx bx-error'></i>Please enter a valid email address!</span>
-                </div>
+    <!-- Include Flatpickr JavaScript library -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-                <!--Script of validating email-->
-                <script>
-                    document.getElementById('email').addEventListener('input', function(event){
-                        const emailInput = event.target;
-                        const errorMessage = document.getElementById('error-message');
-                        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                        if (!emailRegex.test(emailInput.value)) {
-                            errorMessage.style.display = 'inline';
-                        } else {
-                            errorMessage.style.display = 'none';
-                        }
-                    });
-                </script>
+    <!-- Flatpickr theme -->
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_red.css">
+</head>
 
-                <div class="input-box">
-                    <input type="text" id="booking-datetime" name="Booking-Date&time" placeholder="Date & Time(From: 10AM to 7:30PM) " required>
-                    <i class='bx bxs-calendar'></i>
-                </div>
-                <script>
-                    flatpickr("#booking-datetime", {
-                        enableTime: true, // Enable time selection
-                        dateFormat: "d-m-Y h:i K", // Date and time format (day-month-year hour:minute AM/PM)
-                        minDate: "today", // Min date is today
-                        defaultHour: 10, // Default hour set to 10 AM
-                        defaultMinute: 0, // Default minute set to 00
-                        minTime: "10:00", // Minimum selectable time: 10:00 AM
-                        maxTime: "19:30", // Maximum selectable time: 7:30 PM
-                        minuteIncrement: 30, // Step time by 30 minutes
-                        time_24hr: false, // Use 12-hour format
-                        disableMobile: true, // Disable the native mobile picker
-                    });
-                </script>
+<body>
+    <div class="landingpage">
+        <!-- Form for booking -->
+        <form action="https://api.web3forms.com/submit" method="POST" id="form">
+            <!-- Hidden inputs for API configuration -->
+            <input type="hidden" name="access_key" value="86a56da5-f0e3-4adf-b764-5b50c9d29876">
+            <input type="hidden" name="subject" value="Notification: Customer Appointment Inquiry!">
 
-                <!--div class="date-time">
-                    <input type="datetime-local" id="booking-datetime" name="Booking-Date&time" required>
-                </div-->
+            <!-- Form heading -->
+            <h1>SOULTALK myst</h1>
 
-                <!--Script of validating Time-->
-                <!--script>
-                    function setMinDateTime() {
-                        const now = new Date();
-                        const year = now.getFullYear();
-                        const month = String(now.getMonth() + 1).padStart(2, '0');
-                        const day = String(now.getDate()).padStart(2, '0');
-                        const hours = String(now.getHours()).padStart(2, '0');
-                        const minutes = String(now.getMinutes()).padStart(2, '0');
+            <!-- Tagline -->
+            <div class="tagline">
+                <p>The universe has answers waiting for you</p>
+            </div>
 
-                        const formattedDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
+            <!-- Full Name Input -->
+            <div class="input-box">
+                <input type="text" id="Name" name="Name" placeholder="Full Name" required>
+                <i class='bx bxs-user'></i>
+            </div>
 
-                        document.getElementById('booking-datetime').setAttribute('min', formattedDateTime);
+            <!-- Phone Number Input -->
+            <div class="input-box">
+                <input type="text" id="phone" name="Phone Number" placeholder="Phone Number" required maxlength="10"
+                    oninput="this.value=this.value.replace(/[^0-9]/g, '')">
+                <i class='bx bxs-phone'></i>
+            </div>
+
+            <!-- Email Input -->
+            <div class="input-box">
+                <input type="email" id="email" name="Email" placeholder="Email" required>
+                <i class='bx bxs-envelope'></i>
+                <!-- Error message for invalid email -->
+                <span id="error-message" style="color: red; display: none;"><i class='bx bx-error'></i>Please enter a
+                    valid email address!</span>
+            </div>
+
+            <!-- Script for validating email -->
+            <script>
+                document.getElementById('email').addEventListener('input', function (event) {
+                    const emailInput = event.target;
+                    const errorMessage = document.getElementById('error-message');
+                    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+                    if (!emailRegex.test(emailInput.value)) {
+                        errorMessage.style.display = 'inline';
+                    } else {
+                        errorMessage.style.display = 'none';
                     }
-                    window.onload = setMinDateTime;
-                </script-->
+                });
+            </script>
 
-                <div class="mode-session">
-                    <label for="session">Mode of Session:</label>
-                    <select id="Mode" name="Mode">
-                        <option selected class="selected">Choose Mode</option>
-                        <option>Online</option>
-                        <option>Offline</option>
-                    </select>
-                </div>
+            <!-- Booking Date & Time Input -->
+            <div class="input-box">
+                <input type="text" id="booking-datetime" name="Booking-Date&time"
+                    placeholder="Date & Time(From: 10AM to 7:30PM)" required>
+                <i class='bx bxs-calendar'></i>
+            </div>
+            <!-- Flatpickr initialization -->
+            <script>
+                flatpickr("#booking-datetime", {
+                    enableTime: true, // Enable time selection
+                    dateFormat: "d-m-Y h:i K", // Date and time format
+                    minDate: "today", // Prevent selection of past dates
+                    defaultHour: 10, // Default start time: 10 AM
+                    defaultMinute: 0, // Default minute: 00
+                    minTime: "10:00", // Earliest time: 10:00 AM
+                    maxTime: "19:30", // Latest time: 7:30 PM
+                    minuteIncrement: 30, // 30-minute step
+                    time_24hr: false, // Use 12-hour clock
+                    disableMobile: true // Disable mobile native picker
+                });
+            </script>
 
-                <button type="submit" class="btn">Book Now</button>
+            <!-- Mode of Session Selection -->
+            <div class="mode-session">
+                <label for="session">Mode of Session:</label>
+                <select id="Mode" name="Mode">
+                    <option selected class="selected">Choose Mode</option>
+                    <option>Online</option>
+                    <option>Offline</option>
+                </select>
+            </div>
 
-                <div class="more-info">
-                    <p><i class='bx bxs-info-square'></i> For Rescheduling Or Cancellation <br>
-                    Reach us out at our <a href="https://wa.me/917099045855" target="_blank" >WhatsApp</a></p>
-                </div>
-                <input type="hidden" name="redirect" value="https://rahman-ind.github.io/SOULTALK_myst/">
-            </form>
-        </div>
+            <!-- Submit button -->
+            <button type="submit" class="btn">Book Now</button>
 
-        <div class="popup" id="popup">
-            <img src="assets/tick1.gif">
-            <h2>Thank You!</h2>
-            <p>We’ve received your details and will confirm your appointment shortly.</p>
-            <button type="button" onclick="closePopup()">OK</button>
-        </div>
+            <!-- More info section -->
+            <div class="more-info">
+                <p><i class='bx bxs-info-square'></i> For Rescheduling Or Cancellation <br>
+                    Reach us out at our <a href="https://wa.me/917099045855" target="_blank">WhatsApp</a></p>
+            </div>
+            <input type="hidden" name="redirect" value="https://rahman-ind.github.io/SOULTALK_myst/">
+        </form>
+    </div>
 
-        <script>
-            let popup = document.getElementById("popup");
-            let form = document.getElementById("form");
+    <!-- Popup for successful submission -->
+    <div class="popup" id="popup">
+        <img src="assets/tick1.gif">
+        <h2>Thank You!</h2>
+        <p>We’ve received your details and will confirm your appointment shortly.</p>
+        <button type="button" onclick="closePopup()">OK</button>
+    </div>
 
-            function openPopup(){
-                popup.classList.add("open-popup");
+    <!-- Script for handling popup and form validation -->
+    <script>
+        let popup = document.getElementById("popup");
+        let form = document.getElementById("form");
+
+        function openPopup() {
+            popup.classList.add("open-popup");
+        }
+
+        function closePopup() {
+            popup.classList.remove("open-popup");
+            form.submit(); // Submit the form after popup
+            form.reset(); // Clear the form
+        }
+
+        form.addEventListener('submit', function (event) {
+            // Get form values
+            const name = document.getElementById('Name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const bookingDate = document.getElementById('booking-datetime').value.trim();
+            const mode = document.getElementById('Mode').value;
+
+            let isValid = true;
+
+            // Validate name
+            if (name === "" || name.length < 3) {
+                alert("Please enter your full name");
+                isValid = false;
             }
 
-            function closePopup(){
-                popup.classList.remove("open-popup");
-                form.submit();
-                form.reset();
+            // Validate phone number
+            if (phone.length !== 10) {
+                alert("Please enter a valid 10-digit phone number.");
+                isValid = false;
             }
 
-            form.addEventListener('submit', function(event) {
-                // Get form values
-                const name = document.getElementById('Name').value.trim();
-                const phone = document.getElementById('phone').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const bookingDate = document.getElementById('booking-datetime').value.trim();
-                const mode = document.getElementById('Mode').value;
+            // Validate email
+            const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                isValid = false;
+            }
 
-                let isValid = true;
+            // Validate booking date
+            if (bookingDate === "") {
+                alert("Please select a date and time.");
+                isValid = false;
+            }
 
-                // Check if name is empty
-                if (name === "" || name.length < 3) {
-                    alert("Please enter your full name");
-                    isValid = false;
-                }
+            // Validate mode selection
+            if (mode === "Choose Mode") {
+                alert("Please select a mode for the session.");
+                isValid = false;
+            }
 
-                // Check if phone number is valid (10 digits)
-                if (phone.length !== 10) {
-                    alert("Please enter a valid 10-digit phone number.");
-                    isValid = false;
-                }
+            // Prevent form submission if validation fails
+            if (!isValid) {
+                event.preventDefault();
+            } else {
+                // Trigger popup if validation succeeds
+                event.preventDefault();
+                openPopup();
+            }
+        });
+    </script>
+</body>
 
-                // Check if email is valid
-                const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                if (!emailRegex.test(email)) {
-                    alert("Please enter a valid email address.");
-                    isValid = false;
-                }
-
-                // Check if booking date and time is selected
-                if (bookingDate === "") {
-                    alert("Please select a date and time.");
-                    isValid = false;
-                }
-
-                // Check if mode is selected
-                if (mode === "Choose Mode") {
-                    alert("Please select a mode for the session.");
-                    isValid = false;
-                }
-
-                // If any validation fails, prevent form submission
-                if (!isValid) {
-                    event.preventDefault();
-                } else {
-                    // If validation passes, trigger the popup
-                    event.preventDefault(); // Prevent form submission to show the popup first
-                    openPopup();
-                }
-            });
-        </script>
-
-                <!-- Redirect to another website -->
-            
-        <!--    <script>
-                window.onload = function() {
-                    // Reset the form fields when the page loads
-                    document.getElementById("form").reset();
-                    // Make sure the error message (for email) is hidden on load
-                    document.getElementById('error-message').style.display = 'none';
-                };
-            </script>   -->
-        
-        
-        
-    </body>
 </html>

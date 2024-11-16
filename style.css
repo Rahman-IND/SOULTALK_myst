@@ -1,403 +1,375 @@
+/* Import Google Fonts for Poppins and Merienda */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap");
 
-/*This is Header*/
+/* General reset and basic styles for all elements */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    /*outline: 1px solid limegreen !important;        /*for css debugging*/
+    /* outline: 1px solid limegreen !important;  /* Uncomment for debugging layout */
 }
 
-/*body alignment to center*/
+/* Body styling to center the form on the screen */
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url('assets/bg_img.jpeg') no-repeat;
-    background-size: cover;
-    background-position: center;
+    justify-content: center;  /* Center content horizontally */
+    align-items: center;      /* Center content vertically */
+    min-height: 100vh;         /* Full viewport height */
+    background: url('assets/bg_img.jpeg') no-repeat;  /* Background image */
+    background-size: cover;   /* Ensure the background image covers the entire screen */
+    background-position: center;  /* Center the background image */
 }
 
-/*Form box*/
+/* Container for the landing page form */
 .landingpage {
-    width: 420px;
-    background: transparent;
-    border: 2px solid rgba(225, 225, 225, 0.2);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    color: #fff;
-    border-radius: 10px;
-    padding: 30px 40px;
+    width: 420px;               /* Set a fixed width for the form */
+    background: transparent;    /* Transparent background */
+    border: 2px solid rgba(225, 225, 225, 0.2); /* Subtle border with opacity */
+    -webkit-backdrop-filter: blur(20px); /* Blur effect for background */
+    backdrop-filter: blur(20px); /* Blur effect for background */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);  /* Subtle shadow around the form */
+    color: #fff;                /* White text color */
+    border-radius: 10px;        /* Rounded corners */
+    padding: 30px 40px;         /* Padding inside the form */
 }
 
-/*changes in h1*/
+/* Style for the heading */
 .landingpage h1 {
-    font-size: 36px;
-    text-align: center;
-    font-family: "Merienda", cursive;
-    font-weight: 900;
+    font-size: 36px;            /* Font size for the title */
+    text-align: center;         /* Center-align the heading */
+    font-family: "Merienda", cursive;  /* Cursive font for the title */
+    font-weight: 900;           /* Extra bold weight for emphasis */
 }
 
-/*changes in tagline class*/
+/* Style for the tagline */
 .landingpage .tagline p {
-    font-size: 16px;
-    text-align: center;
-    font-family: "Merienda", cursive;
-    font-weight: 600;
+    font-size: 16px;            /* Font size for the tagline */
+    text-align: center;         /* Center-align the tagline */
+    font-family: "Merienda", cursive; /* Cursive font */
+    font-weight: 600;           /* Semi-bold weight for the tagline */
 }
 
-/*changes in input-boxes of Full name, phone no and Email*/
+/* Container for input fields like Full name, Phone no, and Email */
 .landingpage .input-box {
     position: relative;
-    width: 100%;
-    height: 50px;
-    margin: 30px 0;
+    width: 100%;                /* Full width of the container */
+    height: 50px;               /* Fixed height for input fields */
+    margin: 30px 0;             /* Spacing between fields */
 }
 
-/*changes in input-field*/
+/* Styling for input fields (Full name, Email, etc.) */
 .input-box input {
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 2px solid rgba(225, 225, 225, .2);
-    border-radius: 40px;
-    font-size: 16px;        /*input field font size*/
-    color: #fff;
-    padding: 20px 45px 20px 20px;
+    width: 100%;                /* Input field takes full width */
+    height: 100%;               /* Full height of the parent container */
+    background: transparent;    /* Transparent background */
+    border: none;               /* Remove the default border */
+    outline: none;              /* Remove the default outline */
+    border: 2px solid rgba(225, 225, 225, .2);  /* Subtle border */
+    border-radius: 40px;        /* Rounded corners for inputs */
+    font-size: 16px;            /* Input font size */
+    color: #fff;                /* White text color */
+    padding: 20px 45px 20px 20px; /* Padding inside input field */
 }
 
-/*changes in input placeholder*/
-.input-box input::placeholder{
-    color: #ffffffb4;
-    font-size: 14px;        /*placeholder text*/
+/* Placeholder text styling for input fields */
+.input-box input::placeholder {
+    color: #ffffffb4;           /* Light white color for placeholder */
+    font-size: 14px;             /* Font size for placeholder */
 }
 
-/*changes in input field icons*/
+/* Style for icons inside the input fields (e.g., email icon) */
 .input-box i {
     position: absolute;
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    color: #fff;
+    right: 30px;                /* Position icon to the right */
+    top: 50%;                   /* Center vertically */
+    transform: translateY(-50%);/* Align the icon vertically in the middle */
+    font-size: 20px;            /* Icon size */
+    color: #fff;                /* Icon color */
 }
 
-/*changes in error-message of Email field*/
+/* Error message style for email validation */
 .input-box span {
-    padding: 2px 2px 6px 20px;
-    font-size: 14px;
-    font-weight: 600;
+    padding: 2px 2px 6px 20px;  /* Padding around the error message */
+    font-size: 14px;             /* Font size for the error message */
+    font-weight: 600;            /* Semi-bold weight for error */
 }
 
+/* Error icon styling */
 .input-box span i {
-    color: red;
+    color: red;                 /* Red color for the error icon */
 }
 
-/*changes in input field of Date and time*/
+/* Styling for the booking date and time input */
 #booking-datetime {
-    text-align: center;
-    font-size: 16px;
-    padding: 10px;
-    width: 100%;
-    appearance: none; /* Hide native dropdown */
-    -webkit-appearance: none; /* For Webkit browsers */
-    -moz-appearance: none; /* For Firefox */
-    -ms-appearance: none; /* For Internet Explorer */
+    text-align: center;         /* Center-align the text */
+    font-size: 16px;            /* Font size for the date/time input */
+    padding: 10px;              /* Padding inside the field */
+    width: 100%;                /* Full width */
+    appearance: none;           /* Hide native dropdown */
+    -webkit-appearance: none;   /* For Webkit browsers */
+    -moz-appearance: none;      /* For Firefox */
+    -ms-appearance: none;       /* For Internet Explorer */
 }
 
+/* Hides the native calendar picker on date/time input */
 .input-box input[type="text"]::-webkit-calendar-picker-indicator {
-    display: none !important; /* Hide the calendar picker indicator (dropdown) */
+    display: none !important;   /* Hide calendar picker indicator */
 }
 
-/*.landingpage .mode-session {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    margin: 30px 0;
-    color: red#fff;
-}*/
-
-/*changes in mode field*/
+/* Styling for the mode of session input field */
 .landingpage .mode-session {
-    background: transparent;
-    border: none;
-    outline: none;
-    border: 2px solid rgba(225, 225, 225, .2);
-    border-radius: 40px;
-    font-size: 16px;        /*for mode of session*/
-    padding: 10px 10px 10px 20px;
+    background: transparent;    /* Transparent background */
+    border: none;               /* Remove border */
+    outline: none;              /* Remove outline */
+    border: 2px solid rgba(225, 225, 225, .2);  /* Subtle border */
+    border-radius: 40px;        /* Rounded corners */
+    font-size: 16px;            /* Font size for the field */
+    padding: 10px 10px 10px 20px; /* Padding inside the input field */
 }
 
-/*changes in Mode field's Select section*/
+/* Styling for the mode of session dropdown (select) element */
 .landingpage .mode-session select {
-    position: relative;
-    appearance: none;
-    width: 134px;
-    height: 22px;
-    padding: 0px 0px 2px 5px;
-    font-weight: 600;
-    background-color: rgba(255, 255, 255, 0.385);
-    border-radius: 5px;
-    border: 6px;
-    outline: none;
-    font-size: 15px;
-    color: black;
-    background-image: url('assets/arrow-down1.png');
-    background-repeat: no-repeat;
-    background-size: 18px;
-    background-position: 112px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    cursor: pointer;
+    position: relative;         /* Positioning for the select dropdown */
+    appearance: none;           /* Remove default dropdown arrow */
+    width: 134px;               /* Fixed width for select */
+    height: 22px;               /* Fixed height for select */
+    padding: 0px 0px 2px 5px;   /* Padding inside select */
+    font-weight: 600;           /* Semi-bold weight */
+    background-color: rgba(255, 255, 255, 0.385); /* Semi-transparent background */
+    border-radius: 5px;         /* Rounded corners */
+    border: 6px;                /* Border around select field */
+    outline: none;              /* Remove outline */
+    font-size: 15px;            /* Font size */
+    color: black;               /* Text color */
+    background-image: url('assets/arrow-down1.png'); /* Custom dropdown arrow */
+    background-repeat: no-repeat;  /* No repeating of the arrow image */
+    background-size: 18px;      /* Resize the arrow image */
+    background-position: 112px; /* Position the arrow image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);  /* Shadow for the select field */
+    cursor: pointer;           /* Pointer cursor on hover */
 }
 
+/* Hover effect for the mode of session select dropdown */
 .mode-session select:hover {
-    border: 1px solid rgba(255, 255, 255, 0.425);
+    border: 1px solid rgba(255, 255, 255, 0.425); /* Lighter border on hover */
 }
 
-/*to remove the "Choose Mode option from selection menu*/
+/* Hide "Choose Mode" option from the dropdown */
 .selected {
-    display: none;
+    display: none;             /* Hide the "Choose Mode" option */
 }
 
-/*changes in Submit button*/
+/* Styling for the submit button */
 .landingpage .btn {
-    margin-top: 25px;
-    width: 100%;
-    height: 45px;
-    background: #fff;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 600;    
+    margin-top: 25px;           /* Top margin for spacing */
+    width: 100%;                /* Full width button */
+    height: 45px;               /* Fixed height */
+    background: #fff;           /* White background */
+    border: none;               /* Remove border */
+    outline: none;              /* Remove outline */
+    border-radius: 40px;        /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);  /* Subtle shadow */
+    cursor: pointer;           /* Pointer cursor on hover */
+    font-size: 16px;            /* Font size for button text */
+    color: #333;                /* Dark text color */
+    font-weight: 600;           /* Semi-bold font weight */
 }
 
-/*Changes in Rescheduling Or Cancellation */
+/* Styling for additional info (e.g., rescheduling, cancellation) */
 .landingpage .more-info {
-    font-size: 14px;
-    text-align: center;
-    margin: 20px 0 15px;
+    font-size: 14px;            /* Font size for additional info */
+    text-align: center;         /* Center-align the text */
+    margin: 20px 0 15px;        /* Margin around the info */
 }
 
+/* Styling for the links inside the more-info section */
 .more-info p a {
-    color: lightblue;
-    text-decoration: none;
-    font-weight: 700;
-
+    color: lightblue;           /* Light blue color for links */
+    text-decoration: none;      /* Remove underline from links */
+    font-weight: 700;           /* Bold weight for links */
 }
 
+/* Hover effect for links */
 .more-info p a:hover {
-    color: yellowgreen;
+    color: yellowgreen;        /* Change color to yellow-green on hover */
 }
 
+/* Popup styling */
 .popup {
-    width: 410px;
-    background-color: transparent;
-    border: 2px solid rgba(225, 225, 225, 0.2);
-    -webkit-backdrop-filter: blur(50px);
-    backdrop-filter: blur(50px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    border-radius: 10px;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%,-50%) scale(0.1);
-    text-align: center;
-    padding: 0 30px 40px;
-    color: #fff;
-    visibility: hidden;
-    transition: transform 0.4s, top 0.4s;
-}
-.open-popup{
-    top: 50%;
-    visibility: visible;
-    transform: translate(-50%,-50%) scale(1);
+    width: 410px;               /* Set the width for the popup */
+    background-color: transparent;  /* Transparent background */
+    border: 2px solid rgba(225, 225, 225, 0.2); /* Border */
+    -webkit-backdrop-filter: blur(50px); /* Blur effect for background */
+    backdrop-filter: blur(50px);  /* Blur effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);  /* Subtle shadow */
+    border-radius: 10px;        /* Rounded corners */
+    position: absolute;         /* Absolute positioning */
+    top: 0;                     /* Start at top */
+    left: 50%;                  /* Center horizontally */
+    transform: translate(-50%,-50%) scale(0.1); /* Center and scale down */
+    text-align: center;         /* Center-align text in popup */
+    padding: 0 30px 40px;       /* Padding around content */
+    color: #fff;                /* White text color */
+    visibility: hidden;         /* Hidden by default */
+    transition: transform 0.4s, top 0.4s; /* Smooth transition */
 }
 
+/* Popup open state */
+.open-popup {
+    top: 50%;                   /* Center vertically */
+    visibility: visible;        /* Make popup visible */
+    transform: translate(-50%,-50%) scale(1); /* Scale to normal size */
+}
+
+/* Styling for the image in the popup */
 .popup img {
-    width: 100px;
-    margin-top: -16%;
-    border-radius: 100%;
+    width: 100px;               /* Image width */
+    margin-top: -16%;           /* Adjust position of image */
+    border-radius: 100%;        /* Make image round */
 }
+
+/* Heading inside the popup */
 .popup h2 {
-    color: yellowgreen;
-    font-size: 32px;
-    font-weight: 600;
-    margin: 15px 0 10px;
+    color: yellowgreen;         /* Yellow-green color for heading */
+    font-size: 32px;             /* Font size for heading */
+    font-weight: 600;            /* Semi-bold weight */
+    margin: 15px 0 10px;         /* Margin around the heading */
 }
+
+/* Button inside the popup */
 .popup button {
-    margin-top: 25px;
-    width: 100%;
-    height: 45px;
-    background: #fff;
-    border: none;
-    outline: none;
-    border-radius: 40px;
-    box-shadow: 0 5px 5px rgba(0, 0, 0, .2);
-    cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 600;
-    cursor: pointer;
+    margin-top: 25px;           /* Top margin for spacing */
+    width: 100%;                /* Full width button */
+    height: 45px;               /* Fixed height */
+    background: #fff;           /* White background */
+    border: none;               /* Remove border */
+    outline: none;              /* Remove outline */
+    border-radius: 40px;        /* Rounded corners */
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .2); /* Shadow */
+    cursor: pointer;           /* Pointer cursor on hover */
+    font-size: 16px;            /* Font size for button */
+    color: #333;                /* Dark text color */
+    font-weight: 600;           /* Semi-bold font weight */
 }
 
 /*--------------------------------Media Query--------------------------------------------*/
 
+/* Media Query for screens with a maximum width of 800px (Tablets and Small Laptops) */
 @media (max-width: 800px) {
-    /* Adjust landing page form width */
+    /* Adjust landing page form width to take more space on smaller screens */
     .landingpage {
-        width: 75vw; /* Use more space on smaller screens */
-        padding: 20px;
+        width: 75vw; /* Set width to 75% of the viewport width */
+        padding: 20px; /* Adjust padding to fit better on smaller screens */
     }
 
     /* Adjust heading font size for smaller screens */
     .landingpage h1 {
-        font-size: 34px;
+        font-size: 34px; /* Decrease font size for the heading */
     }
-    
-    
-    /* Adjust padding and margins for better spacing on smaller screens */
+
+    /* Adjust padding, margins, and font size for the tagline */
     .landingpage .tagline p {
-        font-size: 17px;
-        font-weight: 400;
-        margin-bottom: 15px;
+        font-size: 17px; /* Increase font size slightly */
+        font-weight: 400; /* Lighten the font weight */
+        margin-bottom: 15px; /* Add spacing below the tagline */
     }
 
+    /* Adjust input field font size and padding for better readability */
     .input-box input {
-        font-size: 18px;
-        padding: 15px 35px 15px 15px;
+        font-size: 18px; /* Increase font size in input fields */
+        padding: 15px 35px 15px 15px; /* Adjust padding for better spacing */
     }
 
-    .input-box input::placeholder{
-        color: #ffffffb4;
-        font-size: 16px;        /*placeholder text*/
-        font-weight: 500;
+    /* Modify the placeholder text styling for better legibility */
+    .input-box input::placeholder {
+        color: #ffffffb4; /* Keep light gray placeholder text */
+        font-size: 16px; /* Adjust font size */
+        font-weight: 500; /* Make the placeholder text slightly bolder */
     }
 
-    /* Adjust icon size in inputs */
+    /* Adjust the icon size inside the input fields */
     .input-box i {
-        font-size: 22px;
+        font-size: 22px; /* Increase icon size for better visibility */
     }
 
+    /* Adjust font size of the booking date-time field */
     #booking-datetime {
-        font-size: 18px;
+        font-size: 18px; /* Increase font size for date/time picker */
     }
 
+    /* Adjust font size of the mode of session field */
     .landingpage .mode-session {
-        font-size: 18px;
+        font-size: 18px; /* Increase font size for the select field */
     }
 
-    /* Adjust select dropdown styles */
+    /* Adjust the select dropdown style (font size, width, height) */
     .landingpage .mode-session select {
-        font-size: 18px;
-        width: 155px;
-        height: 26px;
-        font-weight: 600;
-        background-position: 133px;
+        font-size: 18px; /* Increase font size */
+        width: 155px;    /* Increase width of the select dropdown */
+        height: 26px;    /* Adjust height of the dropdown */
+        font-weight: 600; /* Make font weight bolder */
+        background-position: 133px; /* Adjust the position of the custom arrow */
     }
 
-    /* Adjust the button font size and padding */
+    /* Adjust the submit button font size and margin for better mobile spacing */
     .landingpage .btn {
-        font-size: 22px;
-        margin: 30px 0 0;
+        font-size: 22px;  /* Increase font size */
+        margin: 30px 0 0;  /* Add top margin for spacing */
     }
 
-    /* Modify margin and padding for better mobile UX */
+    /* Modify font size and margins for the more-info section */
     .landingpage .more-info {
-        font-size: 18px;
+        font-size: 18px; /* Increase font size for better readability */
     }
 
+    /* Modify the color of the link in more-info */
     .landingpage .more-info p a {
-        color: #25D366;
+        color: #25D366; /* Change link color to green */
     }
-
-    /* Additional tweaks for small screen design */
-    /*.input-box, 
-    .landingpage .mode-session, 
-    .landingpage .date-time {
-        margin: 15px 0;
-    }*/
 }
 
 /* Media Query for Mobile Screens (max-width: 500px) */
 @media (max-width: 500px) {
+    /* Make the landing page form wider on very small screens */
     .landingpage {
-        width: 90vw; /* Make form wider on very small screens */
-        padding: 15px;
+        width: 90vw; /* Set width to 90% of the viewport width */
+        padding: 15px; /* Reduce padding for smaller screens */
     }
 
+    /* Adjust the font size of the heading for mobile screens */
     .landingpage h1 {
-        font-size: 28px;
+        font-size: 28px; /* Reduce font size for the title */
     }
 
+    /* Adjust font size of the input fields */
     .landingpage .input-box input {
-        font-size: 18px;
+        font-size: 18px; /* Increase font size */
     }
 
+    /* Adjust font size of the mode session dropdown */
     .landingpage .mode-session select {
-        font-size: 18px;
+        font-size: 18px; /* Increase font size */
     }
 
+    /* Adjust the size of icons in input fields */
     .landingpage .input-box i {
-        font-size: 18px;
+        font-size: 18px; /* Adjust icon size */
     }
 
+    /* Adjust font size and margins for the submit button */
     .landingpage .btn {
-        font-size: 22px;
-        margin-top: 20px;
+        font-size: 22px; /* Increase font size of button */
+        margin-top: 20px; /* Add top margin for spacing */
     }
 
+    /* Modify font size and margins for the more-info section */
     .landingpage .more-info {
-        font-size: 14px;
-        margin-bottom: 1px;
+        font-size: 14px; /* Reduce font size for small screens */
+        margin-bottom: 1px; /* Adjust margin for compact layout */
     }
 }
-
-/* Media Query for small Screens (max-width: 400px) */
-/*@media (max-width:400px) {
-    .landingpage {
-        width: 95vw;
-        padding: 5px;
-    }
-
-    .landingpage h1 {
-        font-size: 27px;
-    }
-
-    .landingpage .tagline p {
-        font-size: 13px;
-    }
-
-    .landingpage .input-box {
-        font-size: 13px;
-    }
-
-    .landingpage .input-box span {
-        font-size: 13px;
-    }
-
-    .landingpage .btn {
-        margin-top: 25px 0;
-    }
-
-    .landingpage .more-info p {
-        font-size: 14px;
-        margin-bottom: 15px;
-    }
-
-    .landingpage .more-info p a {
-        color: #25D366;
-    }
-}*/
 
 @media (max-width: 400px) {
     /* Adjust styles for devices with a maximum width of 400px */
