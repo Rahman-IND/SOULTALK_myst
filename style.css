@@ -189,6 +189,7 @@ body {
     color: lightblue;           /* Light blue color for links */
     text-decoration: none;      /* Remove underline from links */
     font-weight: 700;           /* Bold weight for links */
+    font-family: "Poppins", sans-serif;
 }
 
 /* Hover effect for links */
