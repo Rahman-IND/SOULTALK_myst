@@ -24,11 +24,38 @@
 </head>
 
 <body>
+    
+    <nav>
+        <ul class="sidebar">
+            <li class="closemenu" id="closemenu" onclick=closeSidebar()><a href="#"><i class='bx bx-x'></i></a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Blog</a></li>
+        </ul>
+        <ul>
+            <li class="logo" id="logo"><img src="assets/STM_logo.png", height="50px" alt="SOULTALK myst Logo"></a></li>
+            <li class="hideOnMobile"><a href="#">Home</a></li>
+            <li class="hideOnMobile"><a href="#">About</a></li>
+            <li class="hideOnMobile"><a href="#">Blog</a></li>
+            <li class="openmenu" id="openmenu" onclick=showSidebar()><a href="#"><i class='bx bx-menu'></i></a></li>
+        </ul>
+    </nav>
+    <script>
+        function showSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'flex'
+        }
+        function closeSidebar(){
+            const sidebar = document.querySelector('.sidebar')
+            sidebar.style.display = 'none'
+        }
+    </script>
+
     <div class="landingpage">
         <!-- Form for booking -->
         <form action="https://api.web3forms.com/submit" method="POST" id="form">
             <!-- Hidden inputs for API configuration -->
-            <input type="hidden" name="access_key" value="86a56da5-f0e3-4adf-b764-5b50c9d29876">
+            <input type="hidden" name="access_key" value="ed05eb2e-15ae-4ee0-8b2a-c8f17a0b44dc">
             <input type="hidden" name="subject" value="Notification: Customer Appointment Inquiry!">
 
             <!-- Form heading -->
